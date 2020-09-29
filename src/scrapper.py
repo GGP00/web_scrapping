@@ -42,7 +42,7 @@ class Scrapper:
         self.browser.quit() 
 
     def save_data(self):
-        saving_path = '../COVID19_web_scrapping_data_{datetime.date.today()}.csv'
+        saving_path = f'../COVID19_web_scrapping_data_{datetime.date.today()}.csv'
         print(saving_path)
         self.df.to_csv(saving_path, header=True, sep=',', index=False, encoding='utf-8')
         print('Datos descargados con éxito:','\n',self.df.head()) 
