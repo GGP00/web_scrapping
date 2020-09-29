@@ -42,10 +42,10 @@ class Scrapper:
         self.browser.quit() 
 
     def save_data(self):
-        saving_path = f'../COVID19_web_scrapping_data_{datetime.date.today()}.csv'
-        print(saving_path)
-        self.df.to_csv(saving_path, header=True, sep=',', index=False, encoding='utf-8')
-        print('Datos descargados con éxito:','\n',self.df.head()) 
+        saving_path = f'data/'
+        abs_path = Path(saving_path).resolve()
+        self.df.to_csv(str(abs_path)+f'/COVID19_web_scrapping_data_{datetime.date.today()}.csv', header=True, sep=',', index=False, encoding='utf-8')
+        print('Datos descargados con éxito:','\n',self.df.head(),'\n',f'Guardados en: {abs_path}') 
 
 
 if __name__ == "__main__":
