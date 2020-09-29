@@ -9,7 +9,7 @@ Caso práctico educativo para minar datos de páginas web. Máster Data Science 
 
 Datos sobre la mortalidad, recuperación y contagio en todos los países del mundo descargados de la [página web de Google](https://www.google.com/covid19-map/?hl=es).
 
-## Legal:
+## Legalidad:
 
 Se puede observar que no existe restricción alguna para el  scrappeado en el recurso "covid19-map" mediante un CTR-F en el archivo [robots.txt de Google](https://www.google.com/robots.txt).
 
