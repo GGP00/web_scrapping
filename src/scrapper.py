@@ -3,6 +3,9 @@ from selenium import webdriver
 import pandas as pd
 import time
 import datetime
+from pathlib import Path
+
+data_folder = Path("../text_files/")
 
 __author__= "Guzmán Gómez Pérez"
 __email__= "gmgomezper@uoc.edu"
@@ -13,14 +16,7 @@ __license__= "Apache 2.0"
 
 class Scrapper:
     '''
-    Para acceder al contenido dinámico de la tabla primero hay que descargar el html
-    en local y después screapearlo como otra página cualquiera. Para ello:
-
-    * Tener instalado el navegador Firefox y haber instalado el requirements.txt
-
-    1.- brew install geckodriver (en MAC OS)
-    2.- terminal> which geckodriver
-    3.- Copiar el path y pegarlo en el parámetro "executable_path"
+    Aplicación del scrapeado: Descarga el contenido en local de la URL pasada por parámetro y ejecuta el scrapping.
     '''
 
     def __init__(self,  url):
@@ -46,7 +42,7 @@ class Scrapper:
         self.browser.quit() 
 
     def save_data(self):
-        self.df.to_csv(f'../data/COVID19_web_scrapping_data_{datetime.date.today()}.csv', header=True, sep=',', index=False, encoding='utf-8')
+        self.df.to_csv(str(Path('../data/'))+f'COVID19_web_scrapping_data_{datetime.date.today()}.csv', header=True, sep=',', index=False, encoding='utf-8')
         print('Datos descargados con éxito:','\n',self.df.head()) 
 
 
