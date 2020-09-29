@@ -24,14 +24,14 @@ class Scrapper:
     '''
 
     def __init__(self,  url):
-        browser = webdriver.Firefox(executable_path = "/usr/local/bin/geckodriver")
-        browser.get(url)
+        self.browser = webdriver.Firefox(executable_path = "/usr/local/bin/geckodriver")
+        self.browser.get(url)
         time.sleep(3) # Darle tiempo a que se cargue la página en local
-        html = browser.page_source
+        html = self.browser.page_source
         self.soup = BeautifulSoup(html, "lxml")
         self.df = pd.DataFrame()
 
-    def scrap_COVID(self)
+    def scrap_COVID(self):
         table_body = self.soup.find('tbody', attrs={'class':'qEfTDe'})
         table_rows = table_body.findAll('tr', attrs={'class':'A5V3jc'})
         data = []
@@ -42,8 +42,8 @@ class Scrapper:
                     r.append(entry.text)
                 data.append(r)   
         self.df = pd.DataFrame(data, columns =['Country','Positives','Pos.PerMillion','Recovered','Dead']) 
-        browser.close()
-        browser.quit() 
+        self.browser.close()
+        self.browser.quit() 
 
     def save_data(self):
         self.df.to_csv(f'../data/COVID19_web_scrapping_data_{datetime.date.today()}.csv', header=True, sep=',', index=False, encoding='utf-8')
