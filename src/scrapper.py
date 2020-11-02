@@ -7,8 +7,6 @@ from pathlib import Path
 
 data_folder = Path("../text_files/")
 
-__author__= "Guzmán Gómez Pérez"
-__email__= "gmgomezper@uoc.edu"
 __status__= "DEV"
 __version__= "1.0"
 __license__= "Apache 2.0"
