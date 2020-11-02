@@ -3,7 +3,8 @@ Caso práctico educativo para minar datos de páginas web. Máster Data Science 
 
 ## Integrantes del equipo
 
-* Guzmán Gómez Pérez: ggomezper@uoc.edu.
+* [Guzmán Gómez Pérez](https://github.com/GGP00)
+* [Omar Mendo Mesa](https://github.com/beejeke)
 
 ## Datos:
 
