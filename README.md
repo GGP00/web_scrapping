@@ -1,5 +1,5 @@
 # web_scrapping
-Caso práctico educativo para minar datos de páginas web. Máster Data Science - UOC.
+Caso práctico educativo para minar datos de páginas web. Máster Data Science - UOC. Concretamente, se trata de un caso extra para el estudio del contenido dinámico con Selenium.
 
 ## Integrantes del equipo
 
